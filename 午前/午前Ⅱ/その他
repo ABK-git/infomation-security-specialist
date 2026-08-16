@@ -1,0 +1,10 @@
+## ネットワーク機器
+
+- SIEM(Security Information and Event Management,セキュリティ情報とイベント管理)
+    - ログデータを収集・分析して、、攻撃を検知する機能を高度化したセキュリティ機器
+
+## セキュリティ組織
+
+- SOC(Security Operation Center)
+    - 24時間体制でサイバー攻撃を監視する組織
+    - SOAR(Security Orchestration, Automation and Response)という監視業務、インシデント対応の自動化・効率化を進める体制、技術、ソリューションがある

@@ -1,0 +1,107 @@
+## ネットワーク機器
+
+- プロキシ
+    - フォワード
+        - クライアント側に存在
+        - クライアントに代わってWebサーバーにアクセス
+    - リバース
+        - Webサーバー側に存在
+        - Webサーバーに代わってクライアントを受け付け、Webサーバーに受け渡す
+        - この仲介でアクセス制御・認証などを行う!!!
+
+## 暗号化
+
+- SSL/TLS
+    - 平文で行うプロトコルをアプリケーション層とトランスポート層との間で暗号化する
+
+- AES暗号方式
+    - ECB(Electronic Codebook): 128ビットのデータブロックごとに同じ暗号化キーを使用して暗号化する
+    - CBC(Cipher Block Chaining): ECBの弱点改善のために、前の暗号文とのXORで暗号化する
+        - TLS1.3ではセキュリティリスクの観点から削除されている
+    
+
+## プロトコル
+
+- HSTS(HTTP Strict Transport Security)
+    - HTTPアクセスに対して、コンテンツを返さずに、レスポンスヘッダーでHSTSを通知し、WebブラウザがHTTPSへリダイレクトする
+
+- DTLS(Datagram Transport Layer Security)
+    - TLSの認証・改竄検知・暗号化などの機能をUDPの通信に適用する
+    - TCPとの相違点
+        - ヘッダーに独自のシーケンス番号(送信されたデータ順序を保証)
+        - パケット単位で暗号化
+        - 接続の確立時にのみ、再送制御や順序確認
+
+- RADIUS(Remote Authentication Dial In User Service)
+    - 認証・利用のログを単一サーバーに一元化する
+
+- 802.1X認証
+    - クライアント(サプリカント,哀願者) <-> アクセスポイント(authenticator,認証の仲介者),RAS(リモートアクセスサーバー) <-> 認証サーバー(RADIUSサーバー)
+    - アクセスしたいサーバーから認証機能を分離している
+    - PPP
+        - IDとパスワードを平文で送って認証する
+        - チャレンジレスポンス方式で認証する
+    - EAP(PPP Extensible Authentication Protocol)
+        - PPPを拡張して、様々な認証方式を使えるようにする
+
+## セキュリティ機器
+
+- NIDS(ネットワーク型Intrusion Detection System): パケットの解析を通じて、不正アクセスやマルウェア通信を検出する
+    - 該当するOpenSource
+        - Snort(スノート)
+
+## レスポンスヘッダー
+
+- X-Frame-Options: 他ドメインサイトからのframe・inframe要素からの読み込みを制限する
+    - 設定値
+        - same-origin: 同じoriginのページに限ってフレーム内に表示可能
+        - deny: フレーム内に表示を許可しない
+        
+- Strict-Transport-Security(HSTS)
+    - WebサイトにHTTPSで接続することをWebブラウザに強制する
+
+- Content-Security-Policy
+    - W3Cで標準化されている
+    - JavaScriptリソースの制御
+    - クリックジャッキングからの防御
+    例
+    ```bash
+    Content-Security-Policy: default-src 'self'; img-src 'self' example.com
+    ```
+
+## cookie
+
+- 属性
+    - secure
+        - HTTPS通信の際にだけそのcookieを送信する
+        - 秘密の情報を平文で送信されたくない!!
+- 種類
+    - ファーストパーティ: 閲覧中のサイトのドメインから発行されるcookie
+    - サードパーティ: 閲覧しているページ内の広告などの別ドメインから発行されるcookie
+
+## メール
+
+- フィルター機能
+    - シグネチャマッチング
+        - スパムメールのシグネチャに一致するメールを隔離する
+
+## クライアントセキュリティ
+
+- CASB(Cloud Access Security Broker)
+    - クラウドサービスプロバイダと利用者間の単一のコントロールポイント
+        - シャドーIT対策
+        - 許可なくクラウドサービスを利用しているものを見つけられる
+
+## 認証
+
+- SASL(Simple Authentication and Security Layer)
+    - アプリケーションプロトコル共通で利用できる認証プロトコル
+    - 複数のドメインにまたがったセキュアなシングルサインオンができる
+
+## 認可
+
+- OAuth2.0(Open Authorization)
+    - 認可のための標準プロトコル
+    - 認可サーバーがリソースオーナーの許可を得て、サービスに対して適切な権限を付与する
+
+- OpenID Connect: 認可も認証も行う

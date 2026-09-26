@@ -50,6 +50,22 @@
     - 経営者が認識する必要がある3原則
     - 経営者が責任者に指示すべき重要10項目
 
+- COBIT
+    - ISADA(アメリカ情報システムコントロール協会)とITガバナンス協会が策定しているIT管理についてのフレームワーク
+        - 事業体のITに関する経営者の活動を、大きくガバナンスとITマネジメントに分割して40の具体的なプロセスを定義
+
+- SASE(secure access service edge)
+    - ネットワークとセキュリティ機能をクラウド上で統合
+    - アクセス拠点を問わずに、一貫したセキュリティポリシーを適用できる
+
+## 脆弱性対策関連
+
+- CVE(Common Vulnerability Notes): 共通脆弱性識別子
+- CCE(Common Configuration Enumeration): 共通セキュリティ設定一覧
+- CWE(Common Weakness Enumeration): 共通脆弱性一覧。SQLインジェクションやバッファオーバーフローなど
+- CPE(Common Platform Enumeration): 共通基盤一覧。どの製品?windowsやapacheなど
+- CVSS(Common Vulnerability Scoring System): 共通脆弱性スコアリングシステム。脆弱性の深刻度を0.0 ~ 10.0で表現
+
 ## クラウドサービス評価
 
 - ISMAP(Information System Security Management and Assessment Program,情報システムセキュリティ管理・評価プログラム)
@@ -60,3 +76,17 @@
 
 - JIS Q 15001
     - 個人情報マネジメントシステムの確立・実施・維持・継続的な改善を行うための要求事項を定めた規格
+
+## NISTサイバーセキュリティフレームワーク(CSF)
+
+CSFの要素
+- コア: 基本的なサイバーセキュリティ活動の成果を体系化したもの
+    - 統治(GOVERN)
+    - 識別(IDENTITY)
+    - 防御(PROTECT)
+    - 検知(DETECT)
+    - 対応(RESPOND)
+    - 復旧(RECOVER)
+
+- 組織プロファイル
+- ティア

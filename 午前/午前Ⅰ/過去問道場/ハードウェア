@@ -6,6 +6,8 @@
 - FPU(Floating Point Unit, 浮動小数点演算装置)
     - 浮動小数点数を高速に処理するための演算回路
 
+- HDL(Hardware Description Language)：デジタル回路の設計や構成をテキストベースで記述する
+
 ## 制御装置
 
 - PLC(Programmable Logic Controller)
@@ -32,6 +34,8 @@
         - 安価に製造できる
     - アクティブ(能動タグ): 
         - 電池を内蔵し、自ら電波を発信する
+
+- IrDA(Infrare Data Association, 赤外線データ関連): 赤外線を利用した近距離データ通信
 
 ## 半導体
 

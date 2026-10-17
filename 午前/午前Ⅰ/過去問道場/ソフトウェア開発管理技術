@@ -47,7 +47,7 @@
 
 - CPRM(Content Protection for Recordable Media): 
     - for Recordable Media。記録可能メディア
-    - 暗号化して対応した機器でのみ腹腔可能
+    - 暗号化して対応した機器でのみ復号可能
 - CPPM(Content Protection for Pre-Recordable Media): 
     - for Pre-Recordared Media。再生専用メディア用。すでに記録済み。
     - 暗号化してメディアに保存し、再生時に対応した機器で復号化
